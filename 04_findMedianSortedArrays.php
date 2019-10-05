@@ -27,6 +27,9 @@
     The median is (2 + 3)/2 = 2.5
  */
 
+/**
+ * @todo: it's not good, rewrite!
+ */
 class Solution {
 
     /**
