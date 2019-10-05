@@ -28,15 +28,6 @@
                  Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
-$s = 'abcabcbb';
-//$s = 'bbbbb';
-//$s = ' ';
-//$s = 'pwwkew';
-//$s = 'au';
-//$s = 'abba';
-
-echo 'out: ' . (new Solution())->lengthOfLongestSubstring($s);
-
 class Solution {
 
     /**
