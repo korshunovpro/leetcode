@@ -1,6 +1,6 @@
 <?php
 
-namespace Leetcode\AddTwoNumbers;
+namespace Leetcode\L02AddTwoNumbers;
 
 /*
     2. Add Two Numbers

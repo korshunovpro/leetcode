@@ -32,22 +32,28 @@ namespace Leetcode\L09IsPalindrome;
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-class Solution {
-
+class Solution
+{
     /**
-     * @param Integer $x
-     * @return Boolean
+     * Solution.
+     *
+     * @param int $x Value
+     *
+     * @return bool
      */
-    function isPalindrome($x) {
+    public function isPalindrome(int $x): bool
+    {
         if ($x >= 0) {
             $y = $x;
             $rev = 0;
-            while($y) {
+            while ($y) {
                 $rev = $rev * 10 + $y % 10;
-                $y = (int)($y / 10);
+                $y = (int) ($y / 10);
             }
+
             return $rev === $x;
         }
+
         return false;
     }
 }

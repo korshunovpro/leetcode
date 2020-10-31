@@ -55,14 +55,18 @@ namespace Leetcode\L13RomanToInt;
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-class Solution {
-
+class Solution
+{
     /**
-     * @param String $s
-     * @return Integer
+     * Solution.
+     *
+     * @param string $string Roman value
+     *
+     * @return int
      */
-    function romanToInt(string $s) {
-        $rom = [
+    public function romanToInt(string $string): int
+    {
+        $roman = [
             'I' => 1,
             'V' => 5,
             'X' => 10,
@@ -73,11 +77,11 @@ class Solution {
         ];
 
         $result = 0;
-        for($i = 0; isset($s[$i]); $i++) {
-            if ($rom[$s[$i + 1]] > $rom[$s[$i]]) {
-                $result -= $rom[$s[$i]];
+        for ($i = 0; isset($string[$i]); ++$i) {
+            if ($roman[$string[$i + 1]] > $roman[$string[$i]]) {
+                $result -= $roman[$string[$i]];
             } else {
-                $result += $rom[$s[$i]];
+                $result += $roman[$string[$i]];
             }
         }
 

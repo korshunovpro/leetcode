@@ -29,36 +29,41 @@ namespace Leetcode\L07ReverseInteger;
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-class Solution {
-
+class Solution
+{
     /**
-     * @param Integer $x
-     * @return Integer
+     * Solution.
+     *
+     * @param int $x Value
      */
-    function reverse(int $x) : int {
+    public function reverse(int $x): int
+    {
         $reverse = 0;
-        $limit = 2**31;
-        while($x !== 0) {
+        $limit = 2 ** 31;
+        while (0 !== $x) {
             $reverse = ($reverse * 10) + ($x % 10);
-            $x = (int)($x / 10);
+            $x = (int) ($x / 10);
         }
+
         return ($reverse > $limit - 1 || $reverse < (-1 * $limit)) ? 0 : $reverse;
     }
 
     /**
-     * @param $x
-     * @return float|int
+     * Reverse2.
+     *
+     * @param int $x Value
      */
-    function reverse2(int $x) : int {
+    public function reverse2(int $x): int
+    {
         $reverse = 0;
-        $limit = 2**31;
+        $limit = 2 ** 31;
         $k = ($x < 0) ? -1 : 1;
         $x = (string) abs($x);
-        for($i = 0; isset($x[$i]); $i++) {
-            $reverse = $x[$i] . $reverse;
+        for ($i = 0; isset($x[$i]); ++$i) {
+            $reverse = $x[$i].$reverse;
         }
         $reverse = $k * (int) $reverse;
+
         return ($reverse > ($limit - 1) || $reverse < (-1 * $limit)) ? 0 : $reverse;
     }
-
 }

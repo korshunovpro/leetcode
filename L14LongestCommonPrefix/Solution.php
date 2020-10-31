@@ -29,13 +29,20 @@ namespace Leetcode\L14LongestCommonPrefix;
  * Solution.
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
+ *
+ * @todo: implements this
  */
 class Solution
 {
     /**
+     * Solution.
+     *
      * @param string[] $strings Array of strings
+     *
+     * @return string
      */
     public function longestCommonPrefix(array $strings): string
     {
+        return '';
     }
 }

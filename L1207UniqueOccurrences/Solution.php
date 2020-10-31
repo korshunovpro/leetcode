@@ -42,6 +42,8 @@ class Solution
      * Solution.
      *
      * @param int[] $arr Array
+     *
+     * @return bool
      */
     public function uniqueOccurrences(array $arr): bool
     {

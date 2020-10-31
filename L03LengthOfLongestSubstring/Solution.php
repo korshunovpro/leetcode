@@ -34,11 +34,13 @@ namespace Leetcode\L03LengthOfLongestSubstring;
 class Solution
 {
     /**
-     * @param string $s
+     * Solution.
+     *
+     * @param string $s String
      *
      * @return int
      */
-    public function lengthOfLongestSubstring($s)
+    public function lengthOfLongestSubstring(string $s): int
     {
         $check = [];
         $startIndex = 0;

@@ -27,11 +27,11 @@ namespace Leetcode\L05LongestPalindrome;
 class Solution
 {
     /**
-     * @param $str
+     * Solution.
      *
-     * @return string
+     * @param string $str String
      */
-    public function longestPalindrome($str): string
+    public function longestPalindrome(string $str): string
     {
         $iStart = 0;
         $iEnd = strlen($str) - 1;
@@ -53,13 +53,13 @@ class Solution
 
         return $result;
     }
-    
+
     /**
-     * @param string $str
-     * @param int    $start
-     * @param int    $end
+     * CheckIsPalindrome.
      *
-     * @return int
+     * @param string $str   String
+     * @param int    $start Start
+     * @param int    $end   End
      */
     public function checkIsPalindrome(string $str, int $start, int $end): int
     {
