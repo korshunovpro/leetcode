@@ -31,7 +31,7 @@ class Solution
      * @param int[] $nums   Array of integers
      * @param int   $target Target
      *
-     * @return int[]
+     * @return array<int>
      */
     public function twoSum(array $nums, int $target): array
     {
