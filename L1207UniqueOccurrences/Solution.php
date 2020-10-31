@@ -41,7 +41,7 @@ class Solution
     /**
      * Solution.
      *
-     * @param int[] $arr Array
+     * @param array<int> $arr Array
      *
      * @return bool
      */
