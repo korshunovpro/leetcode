@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L14LongestCommonPrefix;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>

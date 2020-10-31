@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L1207UniqueOccurrences;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>

@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L445AddTwoNumbers2;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>

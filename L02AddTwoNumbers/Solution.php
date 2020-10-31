@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L02AddTwoNumbers;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>
@@ -20,28 +23,42 @@
 
  */
 
+/**
+ * Implements of ListNode.
+ */
+class ListNode {
+
+    public int $val = 0;
+    public null $next = null;
+
+    public function __construct($val)
+    {
+        $this->val = $val;
+    }
+}
 
 /**
- * Definition for a singly-linked list.
- * class ListNode {
- *     public $val = 0;
- *     public $next = null;
- *     function __construct($val) { $this->val = $val; }
- * }
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
  */
 class Solution {
 
     /**
-     * @param ListNode $l1
-     * @param ListNode $l2
+     * Solution.
+     *
+     * @param ListNode $linkedList1 Linked List 1
+     * @param ListNode $linkedList2 Linked List 2
+     *
      * @return ListNode
      */
-    function addTwoNumbers($l1, $l2) {
+    public function addTwoNumbers(ListNode $linkedList1, ListNode $linkedList2): ListNode
+    {
         $result = new ListNode(0);
         $node = $result;
 
         $carry = 0;
-        $lists = [$l1, $l2];
+        $lists = [$linkedList1, $linkedList2];
         $isset = count($lists);
         while ($isset) {
 

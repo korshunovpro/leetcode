@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L09IsPalindrome;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>

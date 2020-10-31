@@ -1,4 +1,7 @@
 <?php
+
+namespace Leetcode\L05LongestPalindrome;
+
 /**
  * Leetcode problems php
  * @author Sergey Korshunov <sergey@korshunov.pro>

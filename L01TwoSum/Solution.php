@@ -1,8 +1,6 @@
 <?php
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
+
+namespace Leetcode\L01TwoSum;
 
 /*
     1. Two Sum
@@ -20,14 +18,23 @@
     return [0, 1].
 */
 
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
 class Solution {
 
     /**
-     * @param Integer[] $nums
-     * @param Integer $target
+     * Solution.
+     *
+     * @param Integer[] $nums Array of integers
+     * @param Integer $target Target
+     *
      * @return Integer[]
      */
-    function twoSum($nums, $target) {
+    public function twoSum(array $nums, int $target): array
+    {
         $tmp = [];
         for($i=0; $i < count($nums);$i++) {
             $need = $target - $nums[$i];
@@ -36,5 +43,7 @@ class Solution {
             }
             $tmp[$nums[$i]] = $i;
         }
+
+        return [];
     }
 }
