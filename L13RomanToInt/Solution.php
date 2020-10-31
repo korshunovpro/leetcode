@@ -1,10 +1,6 @@
 <?php
 
 namespace Leetcode\L13RomanToInt;
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
 
 /*
     13. Roman to Integer
@@ -55,7 +51,9 @@ namespace Leetcode\L13RomanToInt;
  */
 
 /**
- * Class Solution
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
  */
 class Solution {
 

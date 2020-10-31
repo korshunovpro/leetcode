@@ -23,20 +23,20 @@ namespace Leetcode\L01TwoSum;
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-class Solution {
-
+class Solution
+{
     /**
      * Solution.
      *
-     * @param Integer[] $nums Array of integers
-     * @param Integer $target Target
+     * @param int[] $nums   Array of integers
+     * @param int   $target Target
      *
-     * @return Integer[]
+     * @return int[]
      */
     public function twoSum(array $nums, int $target): array
     {
         $tmp = [];
-        for($i=0; $i < count($nums);$i++) {
+        for ($i = 0; $i < count($nums); ++$i) {
             $need = $target - $nums[$i];
             if (isset($tmp[$need])) {
                 return [$tmp[$need], $i];

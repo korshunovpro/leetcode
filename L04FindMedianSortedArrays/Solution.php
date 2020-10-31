@@ -2,11 +2,6 @@
 
 namespace Leetcode\L04FindMedianSortedArrays;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     4. Median of Two Sorted Arrays
 
@@ -31,16 +26,22 @@ namespace Leetcode\L04FindMedianSortedArrays;
  */
 
 /**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ *
  * @todo: it's not good, rewrite!
  */
-class Solution {
-
+class Solution
+{
     /**
-     * @param Integer[] $nums1
-     * @param Integer[] $nums2
-     * @return Float
+     * @param int[] $nums1
+     * @param int[] $nums2
+     *
+     * @return float
      */
-    function findMedianSortedArrays($nums1, $nums2) {
+    public function findMedianSortedArrays(array $nums1, array $nums2): ?float
+    {
         $result = [];
 
         $max1 = array_pop($nums1);
@@ -48,35 +49,38 @@ class Solution {
 
         $count = 0;
         while ($max1 || $max2) {
-            while($max2 && ($max1 < $max2)) {
-                $result[] = $max2; $count++;
+            while ($max2 && ($max1 < $max2)) {
+                $result[] = $max2;
+                ++$count;
                 $max2 = array_pop($nums2);
             }
 
-            while($max1 && ($max1 > $max2)) {
-                $result[] = $max1; $count++;
+            while ($max1 && ($max1 > $max2)) {
+                $result[] = $max1;
+                ++$count;
                 $max1 = array_pop($nums1);
             }
 
             if (($max1 && $max2) && ($max1 == $max2)) {
-                $result[] = $max1; $count++;
-                $result[] = $max2; $count++;
+                $result[] = $max1;
+                ++$count;
+                $result[] = $max2;
+                ++$count;
 
                 $max1 = array_pop($nums1);
                 $max2 = array_pop($nums2);
             }
         }
 
-        if ($max1 === 0) {
+        if (0 === $max1) {
             $result[] = $max1;
-            $count++;
+            ++$count;
         }
-        if ($max2 === 0) {
+        if (0 === $max2) {
             $result[] = $max2;
-            $count++;
+            ++$count;
         }
 
-        $median = null;
         if (($count % 2) === 0) {
             $median = ($result[$count / 2 - 1] + $result[$count / 2]) / 2;
         } else {

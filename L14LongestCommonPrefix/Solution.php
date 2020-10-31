@@ -2,11 +2,6 @@
 
 namespace Leetcode\L14LongestCommonPrefix;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     14. Longest Common Prefix
     Easy
@@ -30,13 +25,17 @@ namespace Leetcode\L14LongestCommonPrefix;
     All given inputs are in lowercase letters a-z.
 */
 
-class Solution {
-
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
+class Solution
+{
     /**
-     * @param String[] $strs
-     * @return String
+     * @param string[] $strings Array of strings
      */
-    function longestCommonPrefix($strs) {
-
+    public function longestCommonPrefix(array $strings): string
+    {
     }
 }

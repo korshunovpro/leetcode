@@ -2,11 +2,6 @@
 
 namespace Leetcode\L09IsPalindrome;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
      9. Palindrome Number
     Easy
@@ -32,6 +27,11 @@ namespace Leetcode\L09IsPalindrome;
     Coud you solve it without converting the integer to a string?
  */
 
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
 class Solution {
 
     /**

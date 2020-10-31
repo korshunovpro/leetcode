@@ -1,11 +1,6 @@
 <?php
 
-namespace Leetcode\L02AddTwoNumbers;
-
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
+namespace Leetcode\AddTwoNumbers;
 
 /*
     2. Add Two Numbers
@@ -24,64 +19,48 @@ namespace Leetcode\L02AddTwoNumbers;
  */
 
 /**
- * Implements of ListNode.
- */
-class ListNode {
-
-    public int $val = 0;
-    public null $next = null;
-
-    public function __construct($val)
-    {
-        $this->val = $val;
-    }
-}
-
-/**
  * Solution.
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-class Solution {
-
+class Solution
+{
     /**
      * Solution.
      *
-     * @param ListNode $linkedList1 Linked List 1
-     * @param ListNode $linkedList2 Linked List 2
+     * @param ListNode $linkedList1
+     * @param ListNode $linkedList2
      *
      * @return ListNode
      */
     public function addTwoNumbers(ListNode $linkedList1, ListNode $linkedList2): ListNode
     {
-        $result = new ListNode(0);
-        $node = $result;
+        $node = new ListNode(0);
 
         $carry = 0;
         $lists = [$linkedList1, $linkedList2];
         $isset = count($lists);
         while ($isset) {
-
             $sum = 0;
-            foreach ($lists as $i=>$v) {
+            foreach ($lists as $i => $v) {
                 $sum = $sum + $lists[$i]->val;
                 $lists[$i] = $lists[$i]->next;
                 if (!$lists[$i]) {
                     unset($lists[$i]);
-                    $isset--;
+                    --$isset;
                 }
             }
 
             $sum = $sum + $carry;
             $node->val = $sum % 10;
-            $carry = (int)($sum / 10);
+            $carry = (int) ($sum / 10);
 
             if ($isset || $carry) {
                 $node->next = new ListNode((!$isset && $carry) ? $carry : 0);
                 $node = $node->next;
             }
         }
-        
-        return $result;
+
+        return $node;
     }
 }

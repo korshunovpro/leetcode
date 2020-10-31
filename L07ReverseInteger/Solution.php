@@ -2,11 +2,6 @@
 
 namespace Leetcode\L07ReverseInteger;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     7. Reverse Integer
     Easy
@@ -29,6 +24,11 @@ namespace Leetcode\L07ReverseInteger;
     Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 */
 
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
 class Solution {
 
     /**

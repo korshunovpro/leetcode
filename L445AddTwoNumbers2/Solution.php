@@ -2,11 +2,6 @@
 
 namespace Leetcode\L445AddTwoNumbers2;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     445. Add Two Numbers II
     Medium
@@ -25,23 +20,18 @@ namespace Leetcode\L445AddTwoNumbers2;
 */
 
 /**
- * Definition for a singly-linked list.
- * class ListNode {
- *     public $val = 0;
- *     public $next = null;
- *     function __construct($val) { $this->val = $val; }
- * }
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
  */
-
-class Solution {
-
+class Solution
+{
     /**
-     * @param ListNode $l1
-     * @param ListNode $l2
-     * @return ListNode
+     * Solution.
      */
-    public function addTwoNumbers($l1, $l2) {
-        $lists = [$l1, $l2];
+    public function addTwoNumbers(ListNode $listNode1, ListNode $listNode2): ListNode
+    {
+        $lists = [$listNode1, $listNode2];
         $stacks = [];
 
         // lists stacks
@@ -62,16 +52,15 @@ class Solution {
         $result = new ListNode(0);
         $carry = 0;
         $isset = count($stacks);
-        while($isset) {
-            foreach ($stacks as $i=>$v) {
+        while ($isset) {
+            foreach ($stacks as $i => $v) {
                 $sum = $result->val + array_pop($stacks[$i]) + $carry;
                 if (!count($stacks[$i])) {
-                    var_dump($isset);
-                    $isset--;
+                    --$isset;
                 }
             }
 
-            $carry = (int)($sum/10);
+            $carry = (int) ($sum / 10);
 
             if ($isset || $carry) {
                 $tmpNode = new ListNode((!$isset && $carry) ? $carry : $sum);

@@ -2,11 +2,6 @@
 
 namespace Leetcode\L05LongestPalindrome;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     5. Longest Palindromic Substring
     Medium
@@ -24,29 +19,25 @@ namespace Leetcode\L05LongestPalindrome;
     Output: "bb"
 */
 
-$s = 'abcabcbb';
-//$s = 'bbbbb';
-//$s = ' ';
-//$s = 'pwwkew';
-//$s = 'au';
-//$s = 'abba';
-
-//echo 'out: ' . (new Solution())->longestPalindrome($s);
-echo 'check: ' . (new Solution())->longestPalindrome('sdfgdasabbax');
-
-class Solution {
-
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
+class Solution
+{
     /**
-     * @param String $s
-     * @return Integer
+     * @param $str
+     *
+     * @return string
      */
-    function longestPalindrome($str) {        
+    public function longestPalindrome($str): string
+    {
         $iStart = 0;
         $iEnd = strlen($str) - 1;
         $find = false;
 
-        for($i = $iStart; $i <= $iEnd; $s++) {
-
+        for ($i = $iStart; $i <= $iEnd; ++$i) {
             $check = $this->checkIsPalindrome($str, $i, $iEnd);
             if ($check >= $iEnd - $iStart) {
                 $find = true;
@@ -56,26 +47,28 @@ class Solution {
         }
 
         $result = '';
-        for($s = $iStart; $find && $s <= $iEnd; $s++) {
+        for ($s = $iStart; $find && $s <= $iEnd; ++$s) {
             $result .= $str[$s];
         }
 
-        var_dump($result);
-
         return $result;
     }
-
+    
     /**
      * @param string $str
-     * @param integer $start
-     * @param integer $end
-     * @return integer
+     * @param int    $start
+     * @param int    $end
+     *
+     * @return int
      */
-    function checkIsPalindrome(string $str, int $start, int $end) : int {
-        for($s = $start, $e = $end; isset($str[$s]) && isset($str[$e]) && $s <= $e; $s++, $e--) {
-            if ($str[$s] !== $str[$e]) return 0;
+    public function checkIsPalindrome(string $str, int $start, int $end): int
+    {
+        for ($s = $start, $e = $end; isset($str[$s]) && isset($str[$e]) && $s <= $e; $s++, $e--) {
+            if ($str[$s] !== $str[$e]) {
+                return 0;
+            }
         }
+
         return $end - $start;
     }
-    
 }

@@ -2,11 +2,6 @@
 
 namespace Leetcode\L03LengthOfLongestSubstring;
 
-/**
- * Leetcode problems php
- * @author Sergey Korshunov <sergey@korshunov.pro>
- */
-
 /*
     3. Longest Substring Without Repeating Characters
     Medium
@@ -31,30 +26,36 @@ namespace Leetcode\L03LengthOfLongestSubstring;
                  Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
-class Solution {
-
+/**
+ * Solution.
+ *
+ * @author Sergey Korshunov <sergey@korshunov.pro>
+ */
+class Solution
+{
     /**
-     * @param String $s
-     * @return Integer
+     * @param string $s
+     *
+     * @return int
      */
-    function lengthOfLongestSubstring($s) {
-        
+    public function lengthOfLongestSubstring($s)
+    {
         $check = [];
         $startIndex = 0;
         $length = 0;
 
-        for($i=0; isset($s[$i]); $i++) {
+        for ($i = 0; isset($s[$i]); ++$i) {
             if (isset($check[$s[$i]]) && $check[$s[$i]] > $startIndex) {
                 $startIndex = $check[$s[$i]];
             }
-            $check[$s[$i]] = $i+1;
-            
+            $check[$s[$i]] = $i + 1;
+
             $currLength = $check[$s[$i]] - $startIndex;
-            if ($currLength > $length) {                
-                $length = $currLength;               
+            if ($currLength > $length) {
+                $length = $currLength;
             }
         }
+
         return $length;
     }
-    
 }
