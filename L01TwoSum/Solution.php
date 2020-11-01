@@ -36,10 +36,10 @@ class Solution
     public function twoSum(array $nums, int $target): array
     {
         $result = [];
-        $count = count($nums);
+        $length = count($nums);
 
         $tmp = [];
-        for ($i = 0; $i < $count; ++$i) {
+        for ($i = 0; $i < $length; ++$i) {
             $need = $target - $nums[$i];
             if (isset($tmp[$need])) {
                 $result = [$tmp[$need], $i];
