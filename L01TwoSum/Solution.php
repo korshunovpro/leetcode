@@ -28,22 +28,27 @@ class Solution
     /**
      * Solution.
      *
-     * @param int[] $nums   Array of integers
-     * @param int   $target Target
+     * @param array<int> $nums   Array of integers
+     * @param int        $target Target
      *
      * @return array<int>
      */
     public function twoSum(array $nums, int $target): array
     {
+        $result = [];
+        $count = count($nums);
+
         $tmp = [];
-        for ($i = 0; $i < count($nums); ++$i) {
+        for ($i = 0; $i < $count; ++$i) {
             $need = $target - $nums[$i];
             if (isset($tmp[$need])) {
-                return [$tmp[$need], $i];
+                $result = [$tmp[$need], $i];
+
+                break;
             }
             $tmp[$nums[$i]] = $i;
         }
 
-        return [];
+        return $result;
     }
 }
