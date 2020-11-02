@@ -23,6 +23,8 @@ namespace Leetcode\L05LongestPalindrome;
  * Solution.
  *
  * @author Sergey Korshunov <sergey@korshunov.pro>
+ *
+ * @todo: not solved
  */
 class Solution
 {

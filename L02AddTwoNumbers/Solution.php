@@ -28,39 +28,13 @@ class Solution
     /**
      * Solution.
      *
-     * @param ListNode $linkedList1
-     * @param ListNode $linkedList2
-     *
-     * @return ListNode
+     * @param ListNode $linkedList1 ListNode
+     * @param ListNode $linkedList2 ListNode
      */
     public function addTwoNumbers(ListNode $linkedList1, ListNode $linkedList2): ListNode
     {
-        $node = new ListNode(0);
+        $result = new ListNode(0);
 
-        $carry = 0;
-        $lists = [$linkedList1, $linkedList2];
-        $isset = count($lists);
-        while ($isset) {
-            $sum = 0;
-            foreach ($lists as $i => $v) {
-                $sum = $sum + $lists[$i]->val;
-                $lists[$i] = $lists[$i]->next;
-                if (!$lists[$i]) {
-                    unset($lists[$i]);
-                    --$isset;
-                }
-            }
-
-            $sum = $sum + $carry;
-            $node->val = $sum % 10;
-            $carry = (int) ($sum / 10);
-
-            if ($isset || $carry) {
-                $node->next = new ListNode((!$isset && $carry) ? $carry : 0);
-                $node = $node->next;
-            }
-        }
-
-        return $node;
+        return $result;
     }
 }
